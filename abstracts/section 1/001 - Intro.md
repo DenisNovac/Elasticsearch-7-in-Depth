@@ -44,6 +44,12 @@ curl -XGET localhost:9200
 }
 ```
 
+Curl - это утилита для отправки HTTP-запросов из консоли:
+
+```bash
+curl -H "Content-Type: application/json" <URL> -d '<BODY>'
+```
+
 ## Поиск
 
 Теперь у нас есть поисковый движок, загрузим в него что-нибудь. 
@@ -149,6 +155,10 @@ curl -H "Content-Type: application/json" -XGET 'localhost:9200/shakespeare/_sear
 ```
 
 В Кибане это выглядит следующим образом:
+
+![kibana](img/000-kibana.png)
+
+Полнотекстовый поиск Кибаны:
 
 ![kibana](img/001-kibana.png)
 
