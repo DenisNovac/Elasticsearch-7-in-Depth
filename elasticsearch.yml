@@ -1,0 +1,17 @@
+# https://github.com/elastic/elasticsearch/blob/v7.7.0/distribution/src/config/elasticsearch.yml
+
+cluster.name: "docker-cluster"
+network.host: 0.0.0.0
+
+
+# Исправляет проблему:
+# master not discovered yet, this node has not previously joined a bootstrapped (v7+) cluster, and this node must discover master-eligible nodes
+# org.elasticsearch.discovery.MasterNotDiscoveredException: null
+
+cluster.initial_master_nodes: ["node-1"]
+node.name: node-1
+
+# Исправляет проблему: the default discovery settings are unsuitable for production use; at least one of [discovery.seed_hosts,
+# discovery.seed_providers, cluster.initial_master_nodes] must be configured
+
+discovery.seed_hosts: ["127.0.0.1"]
